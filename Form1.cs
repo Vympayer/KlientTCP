@@ -31,7 +31,7 @@ namespace KlientTCP
         private void connect_Click(object sender, EventArgs e)
         {
             string host = Adres.Text;
-            int port = System.Convert.ToInt32(Port_p.Value);  
+            int port = Convert.ToInt32(Port_p.Value);  
 
             try
             {
