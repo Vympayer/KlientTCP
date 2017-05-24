@@ -31,9 +31,9 @@
             this.przycisk = new System.Windows.Forms.Button();
             this.connect = new System.Windows.Forms.Button();
             this.Adres = new System.Windows.Forms.TextBox();
-            this.Port = new System.Windows.Forms.NumericUpDown();
+            this.Port_p = new System.Windows.Forms.NumericUpDown();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Port)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Port_p)).BeginInit();
             this.SuspendLayout();
             // 
             // przycisk
@@ -54,6 +54,7 @@
             this.connect.TabIndex = 1;
             this.connect.Text = "połącz";
             this.connect.UseVisualStyleBackColor = true;
+            this.connect.Click += new System.EventHandler(this.connect_Click);
             // 
             // Adres
             // 
@@ -63,17 +64,18 @@
             this.Adres.TabIndex = 2;
             this.Adres.Text = "Adres";
             // 
-            // Port
+            // Port_p
             // 
-            this.Port.Location = new System.Drawing.Point(195, 12);
-            this.Port.Maximum = new decimal(new int[] {
+            this.Port_p.Location = new System.Drawing.Point(195, 12);
+            this.Port_p.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.Port.Name = "Port";
-            this.Port.Size = new System.Drawing.Size(120, 20);
-            this.Port.TabIndex = 3;
+            this.Port_p.Name = "Port_p";
+            this.Port_p.Size = new System.Drawing.Size(120, 20);
+            this.Port_p.TabIndex = 3;
+            this.Port_p.ValueChanged += new System.EventHandler(this.Port_ValueChanged);
             // 
             // listBox1
             // 
@@ -82,6 +84,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(303, 121);
             this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -89,13 +92,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 234);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.Port);
+            this.Controls.Add(this.Port_p);
             this.Controls.Add(this.Adres);
             this.Controls.Add(this.connect);
             this.Controls.Add(this.przycisk);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.Port)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Port_p)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +109,7 @@
         private System.Windows.Forms.Button przycisk;
         private System.Windows.Forms.Button connect;
         private System.Windows.Forms.TextBox Adres;
-        private System.Windows.Forms.NumericUpDown Port;
+        private System.Windows.Forms.NumericUpDown Port_p;
         private System.Windows.Forms.ListBox listBox1;
     }
 }
